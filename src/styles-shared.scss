@@ -5,6 +5,36 @@ $yellow-500: #FFE074;
 $green-500: #C6D793;
 $pink-500: #FFB6E1;
 
-//borders
+$white-32: rgba(255, 255, 255, 0.32);
+$purple-80: rgba(225, 193, 255, 0.8);
+
+  // borders
 $border-radius: 6px;
-$border: 1.5px solid rgba(255, 255, 255, 0.16);
+$border: 1.5px solid $white-32;
+$border-hover: 1.5px solid $purple-80;
+
+// override Material classes
+.mat-mdc-icon-button {
+  width: 40px !important;
+  height: 40px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: $border;
+  border-radius: 50%;
+  padding: 0;
+  transition: 0.2s;
+}
+
+.mat-mdc-icon-button:hover {
+  border: $border-hover;
+}
+
+.mat-mdc-icon-button .mat-mdc-button-touch-target {
+  width: 40px !important;
+  height: 40px !important;
+}
+
+
+// global classes
+
