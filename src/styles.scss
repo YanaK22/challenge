@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Ubuntu:wght@400;500;700&display=swap');
+
+@import "styles-shared";
+
+html,
+body {
+  height: 100%;
+  box-sizing: border-box;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  color: white;
+}
+
+body {
+  margin: 0;
+  background: $black-700;
+}
+
+
