@@ -12,4 +12,8 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {}
+
+  navigateToGitHub() {
+    window.open('https://github.com/YanaK22/challenge', '_blank')
+  }
 }

@@ -6,11 +6,17 @@ $green-500: #C6D793;
 $pink-500: #FFB6E1;
 
 $white-32: rgba(255, 255, 255, 0.32);
+$white-16: rgba(255, 255, 255, 0.16);
 $purple-80: rgba(225, 193, 255, 0.8);
+$yellow-32: rgba(255, 224, 116, 0.32);
+
+$font-family: 'Ubuntu',sans-serif;
+$h-font-family: 'Luckiest Guy',sans-serif;
 
   // borders
-$border-radius: 6px;
-$border: 1.5px solid $white-32;
+$border-radius-6: 6px;
+$border-radius-12: 12px;
+$border: 1.5px solid $white-16;
 $border-hover: 1.5px solid $purple-80;
 
 // override Material classes
@@ -35,6 +41,18 @@ $border-hover: 1.5px solid $purple-80;
   height: 40px !important;
 }
 
+.mat-mdc-outlined-button {
+  color: white !important;
+  border: $border !important;
+}
+
+.mdc-button__label {
+  font-family: $font-family !important;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: normal !important;
+}
 
 // global classes
 

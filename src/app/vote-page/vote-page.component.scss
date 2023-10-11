@@ -1,0 +1,128 @@
+@import "../../styles-shared";
+
+.vote-page {
+  min-height: calc(100% - 240px);
+  padding: 32px 24px;
+
+  .page-inner {
+    max-width: 1256px;
+    margin: 0 auto;
+  }
+}
+
+.results {
+  .results-title {
+    font-family: $h-font-family;
+    font-size: 48px;
+    line-height: 56px;
+    color: $yellow-500;
+    margin-bottom: 24px;
+  }
+
+  .results-card {
+    width: 856px;
+    background: $black-600;
+    border: $border;
+    border-radius: $border-radius-12;
+    padding: 40px;
+  }
+
+  .lead-top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+  }
+
+  .lead {
+    width: 200px;
+    height: 200px;
+    border: 1.5px solid $yellow-32;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: $h-font-family;
+    font-size: 24px;
+    line-height: 32px;
+    color: $yellow-500;
+  }
+
+  .top {
+    display: flex;
+    column-gap: 64px;
+
+    .top-pros,
+    .top-cons {
+      max-width: 240px;
+    }
+
+    .top-title {
+      display: flex;
+      align-items: center;
+      column-gap: 16px;
+      font-family: $h-font-family;
+      font-size: 24px;
+      line-height: 32px;
+      margin-bottom: 24px;
+    }
+
+    .list {
+      display: flex;
+      flex-direction: column;
+      row-gap: 8px;
+    }
+
+    .list-item {
+      display: flex;
+      align-items: center;
+      column-gap: 12px;
+    }
+
+    .number {
+      font-family: $h-font-family;
+      font-size: 24px;
+      line-height: 32px;
+      min-width: 14px;
+    }
+
+    .first-number {
+      color: $yellow-500;
+    }
+  }
+
+  .diagram-total {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .diagram-title {
+    font-family: $h-font-family;
+    font-size: 24px;
+    line-height: 32px;
+    margin-bottom: 16px;
+
+    span {
+      color: $yellow-500;
+    }
+  }
+
+  .control {
+    display: flex;
+    align-items: center;
+
+    .control-label {
+      min-width: 200px;
+    }
+
+    .control-line {
+      width: 350px;
+      height: 6px;
+    }
+
+    .control-line-value {
+      height: 6px;
+      border-radius: 4px;
+      background: #FFE074;
+    }
+  }
+}

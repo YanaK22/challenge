@@ -11,11 +11,11 @@
   .header-inner,
   .footer-inner {
     width: 100%;
-    max-width: 1256px;
+    max-width: 1480px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 24px;
+    padding: 0 40px;
   }
 }
 
@@ -25,20 +25,41 @@
   align-items: center;
 
   .logo-text {
-    font-family: 'Luckiest Guy', sans-serif;
+    font-family: $h-font-family;
     font-size: 24px;
     line-height: 32px;
   }
 }
 
-.participants {
+.quiz-participants {
   display: flex;
   align-items: center;
   column-gap: 16px;
-  padding: 12px 18px;
-  background: $black-600;
-  border-radius: $border-radius;
-  border: $border;
+
+  .quiz-button {
+    height: 66px;
+    padding: 0 40px;
+    background: $pink-500;
+  }
+
+  .participants {
+    display: flex;
+    align-items: center;
+    column-gap: 16px;
+    padding: 12px 18px;
+    background: $black-600;
+    border-radius: $border-radius-6;
+    border: $border;
+
+    .avatar {
+      cursor: pointer;
+    }
+
+    .participants-text {
+      font-size: 14px;
+      line-height: 21px;
+    }
+  }
 }
 
 .sign {
