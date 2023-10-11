@@ -1,0 +1,22 @@
+<div mat-dialog-content>
+  <div class="content">
+    <button class="close-button" mat-icon-button mat-dialog-close>
+      <mat-icon svgIcon="close"></mat-icon>
+    </button>
+
+    <div *ngIf="slide === 1" class="slide slide-1">
+      <div class="text">Should I feed my cat?</div>
+      <button class="next-button" mat-stroked-button (click)="loadSlide(2)">Find out</button>
+    </div>
+    <div *ngIf="slide === 2" class="slide slide-2">
+      <div class="text">Yes.</div>
+      <button class="next-button" mat-stroked-button (click)="loadSlide(3)">Are you sure?</button>
+    </div>
+    <div *ngIf="slide === 3" class="slide slide-3">
+      <div class="text">Feed him right now.</div>
+      <button class="next-button" mat-stroked-button (click)="loadSlide(3)">Are you sure?</button>
+    </div>
+
+    <img *ngIf="slide === 0" class="loading" src="assets/images/loading-cat.gif">
+  </div>
+</div>

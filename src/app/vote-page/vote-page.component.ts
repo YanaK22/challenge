@@ -12,12 +12,10 @@ import { NotificationDialogComponent } from '../notification-dialog/notification
 export class VotePageComponent {
   ItemType = ItemType
 
-  constructor(public dialog: MatDialog) {
-
-  }
+  constructor(public dialog: MatDialog) {}
 
   openAddItemDialog(type: ItemType) {
-    const dialog = this.dialog.open(NotificationDialogComponent, {
+    const dialog = this.dialog.open(AddItemDialogComponent, {
       data: { type }
     });
 

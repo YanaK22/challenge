@@ -18,6 +18,7 @@ import { VoteCardComponent } from './vote-card/vote-card.component';
 import { AddItemDialogComponent } from './add-item-dialog/add-item-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { NotificationDialogComponent } from './notification-dialog/notification-dialog.component';
+import { QuizDialogComponent } from './quiz-dialog/quiz-dialog.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { NotificationDialogComponent } from './notification-dialog/notification-
     VoteCardComponent,
     AddItemDialogComponent,
     NotificationDialogComponent,
+    QuizDialogComponent,
   ],
   imports: [
     BrowserModule,
