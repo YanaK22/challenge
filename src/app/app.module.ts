@@ -15,7 +15,6 @@ import { MatInputModule } from '@angular/material/input';
 import { IconService } from '../services/icon.service';
 import { MatButtonModule } from '@angular/material/button';
 
-
 @NgModule({
   declarations: [
     AppComponent,

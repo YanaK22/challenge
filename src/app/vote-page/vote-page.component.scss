@@ -10,17 +10,25 @@
   }
 }
 
+.info {
+  display: flex;
+  column-gap: 32px;
+}
+
 .results {
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+
   .results-title {
     font-family: $h-font-family;
     font-size: 48px;
     line-height: 56px;
     color: $yellow-500;
-    margin-bottom: 24px;
   }
 
   .results-card {
-    width: 856px;
+    width: 824px;
     background: $black-600;
     border: $border;
     border-radius: $border-radius-12;
@@ -30,7 +38,7 @@
   .lead-top {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 40px;
+    margin-bottom: 64px;
   }
 
   .lead {
@@ -92,6 +100,7 @@
 
   .diagram-total {
     display: flex;
+    align-items: flex-end;
     justify-content: space-between;
   }
 
@@ -109,9 +118,12 @@
   .control {
     display: flex;
     align-items: center;
+    min-height: 32px;
 
     .control-label {
       min-width: 200px;
+      font-size: 14px;
+      line-height: 21px;
     }
 
     .control-line {
@@ -125,4 +137,64 @@
       background: #FFE074;
     }
   }
+
+  .total {
+    .total-pros,
+    .total-cons {
+      display: flex;
+      align-items: center;
+      min-height: 32px;
+      color: $white-32;
+      font-size: 14px;
+      line-height: 21px;
+    }
+  }
 }
+
+.log {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+
+  .log-title {
+    font-family: $h-font-family;
+    font-size: 48px;
+    line-height: 56px;
+    color: $yellow-500;
+  }
+
+  .log-card {
+    flex: 1;
+    background: $black-600;
+    border: $border;
+    border-radius: $border-radius-12;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .log-card-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    row-gap: 12px;
+    padding: 24px;
+    font-size: 14px;
+    overflow: auto;
+    right: -17px;
+  }
+
+  .log-item {
+    display: flex;
+    column-gap: 12px;
+  }
+
+  .log-time {
+    color: $white-32;
+  }
+}
+
+
