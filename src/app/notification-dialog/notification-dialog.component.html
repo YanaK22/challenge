@@ -1,0 +1,15 @@
+<div mat-dialog-content>
+  <div class="content">
+    <img *ngIf="data.type === ItemType.Pros" class="image" src="assets/images/pros-success.png">
+    <img *ngIf="data.type === ItemType.Cons" class="image" src="assets/images/cons-success.png">
+
+    <div class="title">
+      Your option was added to {{ data.type }}!
+    </div>
+    <div class="subtitle">
+      ({{ data.type === ItemType.Pros ? 'nice' : '...but at what cost?'}})
+    </div>
+
+    <button class="close-button" mat-stroked-button mat-dialog-close>Close</button>
+  </div>
+</div>

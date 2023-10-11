@@ -1,14 +1,20 @@
 // colors
 $black-700: #121212;
 $black-600: #1E1E1E;
-$yellow-500: #FFE074;
-$green-500: #C6D793;
-$pink-500: #FFB6E1;
+$black-400: #333333;
 
-$white-32: rgba(255, 255, 255, 0.32);
-$white-16: rgba(255, 255, 255, 0.16);
-$purple-80: rgba(225, 193, 255, 0.8);
+$yellow-500: #FFE074;
+$yellow-56: rgba(255, 224, 116, 0.56);
 $yellow-32: rgba(255, 224, 116, 0.32);
+
+$green-500: #C6D793;
+$pink-500: #EFB6A3;
+$red-500: #DC4040;
+
+$white-56: rgba(255, 255, 255, 0.56);
+$white-32: rgba(255, 255, 255, 0.32);
+$white-24: rgba(255, 255, 255, 0.24);
+$white-16: rgba(255, 255, 255, 0.16);
 
 $font-family: 'Ubuntu',sans-serif;
 $h-font-family: 'Luckiest Guy',sans-serif;
@@ -17,7 +23,7 @@ $h-font-family: 'Luckiest Guy',sans-serif;
 $border-radius-6: 6px;
 $border-radius-12: 12px;
 $border: 1.5px solid $white-16;
-$border-hover: 1.5px solid $purple-80;
+$border-hover: 1.5px solid $yellow-32;
 
 // override Material classes
 .mat-mdc-icon-button {
@@ -44,6 +50,25 @@ $border-hover: 1.5px solid $purple-80;
 .mat-mdc-outlined-button {
   color: white !important;
   border: $border !important;
+  border-radius: $border-radius-6 !important;
+}
+
+.mat-mdc-button .mat-mdc-button-touch-target,
+.mat-mdc-unelevated-button .mat-mdc-button-touch-target,
+.mat-mdc-raised-button .mat-mdc-button-touch-target,
+.mat-mdc-outlined-button .mat-mdc-button-touch-target {
+  height: fit-content !important;
+}
+
+.mat-mdc-button.mat-mdc-button-base,
+.mat-mdc-raised-button.mat-mdc-button-base,
+.mat-mdc-unelevated-button.mat-mdc-button-base,
+.mat-mdc-outlined-button.mat-mdc-button-base {
+  min-height: 48px !important;
+}
+
+.mat-mdc-outlined-button:disabled {
+  color: $white-16 !important;
 }
 
 .mdc-button__label {
@@ -52,6 +77,86 @@ $border-hover: 1.5px solid $purple-80;
   font-size: 16px;
   line-height: 24px;
   letter-spacing: normal !important;
+}
+
+.cdk-global-scrollblock {
+  overflow: hidden;
+}
+
+.mat-mdc-dialog-container .mdc-dialog__surface {
+  border-radius: $border-radius-12 !important;
+  background-color: $black-600 !important;
+  border: 1px solid white !important;
+}
+
+.mat-mdc-dialog-container .mdc-dialog__title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+
+  h1 {
+    flex: 1;
+    font-family: $h-font-family !important;
+    font-size: 24px !important;
+    line-height: 32px !important;
+    color: white !important;
+  }
+}
+
+.mat-mdc-dialog-container .mdc-dialog__content {
+  color: $white-56 !important;
+  font-family: $font-family !important;
+  font-size: 16px !important;
+  line-height: 21px !important;
+  letter-spacing: normal !important;
+  padding: 0 !important;
+}
+
+.mat-mdc-form-field {
+  width: 100%;
+}
+
+.mdc-text-field--filled:not(.mdc-text-field--disabled) {
+  background: $black-700 !important;
+}
+
+.mdc-text-field--filled {
+  border-radius: $border-radius-6 !important;
+  border: 1px solid $white-16;
+  transition: 0.2s;
+}
+
+.mdc-text-field--filled:hover {
+  border: 1px solid $white-24;
+}
+
+.mdc-text-field--filled:active {
+  border: 1px solid $white-32;
+}
+
+.mat-mdc-form-field input {
+  color: white;
+  font-family: $font-family !important;
+  font-size: 16px !important;
+  line-height: 21px !important;
+  caret-color: white;
+}
+
+.mat-mdc-form-field-error {
+  color: $red-500;
+  font-family: $font-family;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.mdc-text-field--no-label:not(.mdc-text-field--outlined):not(.mdc-text-field--textarea) .mat-mdc-form-field-infix {
+  padding: 12px 0;
+  min-height: unset;
+}
+
+.mdc-line-ripple {
+  display: none;
 }
 
 // global classes

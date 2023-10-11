@@ -4,6 +4,14 @@ import { DomSanitizer } from '@angular/platform-browser';
 
 enum Icons {
   Github= 'github',
+  Add = 'add',
+  Like = 'like',
+  Dislike = 'dislike',
+  CurrentResults = 'currentResults',
+  Log = 'log',
+  Pros = 'pros',
+  Cons = 'cons',
+  Close = 'close',
 }
 
 @Injectable({ providedIn: 'root' })

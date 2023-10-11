@@ -1,0 +1,28 @@
+@import "../../styles-shared";
+
+.content {
+  padding: 24px;
+  width: 450px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image {
+  max-width: 100%;
+  border-radius: 12px;
+  margin-bottom: 16px;
+}
+
+.title {
+  margin-bottom: 4px;
+}
+
+.subtitle {
+  color: $white-24;
+  margin-bottom: 32px;
+}
+
+.close-button {
+  width: 100px;
+}

@@ -76,6 +76,7 @@
           </div>
         </div>
       </div>
+
       <div class="log">
         <h2 class="log-title">log</h2>
         <div class="log-card">
@@ -92,35 +93,37 @@
               <span class="log-time">00:04</span>
               <div class="log-text">“They are strong-willed” added to cons</div>
             </div>
-            <div class="log-item">
-              <span class="log-time">00:04</span>
-              <div class="log-text">“They are strong-willed” added to cons</div>
-            </div>
-            <div class="log-item">
-              <span class="log-time">00:04</span>
-              <div class="log-text">“They are strong-willed” added to cons</div>
-            </div>
-            <div class="log-item">
-              <span class="log-time">00:04</span>
-              <div class="log-text">“They are strong-willed” added to cons</div>
-            </div>
-            <div class="log-item">
-              <span class="log-time">00:04</span>
-              <div class="log-text">“They are strong-willed” added to cons</div>
-            </div>
-            <div class="log-item">
-              <span class="log-time">00:04</span>
-              <div class="log-text">“They are strong-willed” added to cons</div>
-            </div>
-            <div class="log-item">
-              <span class="log-time">00:04</span>
-              <div class="log-text">“They are strong-willed” added to cons</div>
-            </div>
-            <div class="log-item">
-              <span class="log-time">00:04</span>
-              <div class="log-text">“They are strong-willed” added to cons</div>
-            </div>
           </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pros-cons">
+      <div class="pros">
+        <div class="title">
+          <div class="title-text">pros</div>
+          <button mat-icon-button (click)="openAddItemDialog(ItemType.Pros)">
+            <mat-icon svgIcon="add"></mat-icon>
+          </button>
+        </div>
+        <div class="cards">
+          <c-vote-card></c-vote-card>
+          <c-vote-card></c-vote-card>
+        </div>
+      </div>
+
+      <div class="cons">
+        <div class="title">
+          <div class="title-text">cons</div>
+          <button mat-icon-button (click)="openAddItemDialog(ItemType.Cons)">
+            <mat-icon svgIcon="add"></mat-icon>
+          </button>
+        </div>
+        <div class="cards">
+          <c-vote-card></c-vote-card>
+          <c-vote-card></c-vote-card>
+          <c-vote-card></c-vote-card>
+          <c-vote-card></c-vote-card>
         </div>
       </div>
     </div>

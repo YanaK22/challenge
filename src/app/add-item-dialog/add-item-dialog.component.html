@@ -1,0 +1,28 @@
+<div mat-dialog-title>
+  <h1>Add item to {{ data.type }}</h1>
+  <button mat-icon-button mat-dialog-close>
+    <mat-icon svgIcon="close"></mat-icon>
+  </button>
+</div>
+
+<div mat-dialog-content>
+  <div class="content">
+    <form class="form" (ngSubmit)="onSubmit()">
+      <div class="control">
+        <label for="item"></label>
+        <mat-form-field>
+          <input id="item" type="text" matInput [formControl]="control">
+          <mat-error *ngIf="control.hasError('required')">
+            Field is empty
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <button
+        type="submit"
+        class="submit-button"
+        mat-stroked-button
+        [disabled]="control.hasError('required')"
+      >Submit</button>
+    </form>
+  </div>
+</div>
