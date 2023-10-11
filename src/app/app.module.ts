@@ -19,10 +19,12 @@ import { AddItemDialogComponent } from './add-item-dialog/add-item-dialog.compon
 import { MatDialogModule } from '@angular/material/dialog';
 import { NotificationDialogComponent } from './notification-dialog/notification-dialog.component';
 import { QuizDialogComponent } from './quiz-dialog/quiz-dialog.component';
+import { StartPageComponent } from './start-page/start-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    StartPageComponent,
     VotePageComponent,
     VoteCardComponent,
     AddItemDialogComponent,

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { VotePageComponent } from './vote-page/vote-page.component';
+import { StartPageComponent } from './start-page/start-page.component';
 
 const routes: Routes = [
   {
@@ -10,7 +11,7 @@ const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'vote-page',
+    component: StartPageComponent,
   }
 ];
 
