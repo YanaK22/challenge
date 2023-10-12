@@ -16,7 +16,11 @@ export class LogService {
   }
 
   getTime() {
-    return this.datePipe.transform(Date.now() - this.startDate, 'mm:ss') ?? '';
+    return Date.now() - this.startDate; // ms
+  }
+
+  getTimeFormat() {
+    return this.datePipe.transform(this.getTime(), 'mm:ss') ?? '';
   }
 
   logStartVoting() {
@@ -24,14 +28,14 @@ export class LogService {
   }
 
   logCreateItem(text: string, type: ItemType) {
-    this.logs.unshift({ time: this.getTime(), text: `"${text}" added to ${type}` });
+    this.logs.unshift({ time: this.getTimeFormat(), text: `"${text}" added to ${type}` });
   }
 
   logLike(text: string) {
-    this.logs.unshift({ time: this.getTime(), text: `"${text}" liked` });
+    this.logs.unshift({ time: this.getTimeFormat(), text: `"${text}" liked` });
   }
 
   logDislike(text: string) {
-    this.logs.unshift({ time: this.getTime(), text: `"${text}" disliked` });
+    this.logs.unshift({ time: this.getTimeFormat(), text: `"${text}" disliked` });
   }
 }
