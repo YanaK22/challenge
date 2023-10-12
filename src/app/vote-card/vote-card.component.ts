@@ -17,6 +17,10 @@ export class VoteCardComponent {
 
   constructor(private voteService: VoteService) {}
 
+  get isVoteFinished() {
+    return this.voteService.isVoteFinished;
+  }
+
   onLikeClick(id: string) {
     this.voteService.like(id, this.type);
   }

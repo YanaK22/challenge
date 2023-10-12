@@ -73,17 +73,9 @@
         <h2 class="log-title">log</h2>
         <div class="log-card">
           <div class="log-card-inner">
-            <div class="log-item">
-              <span class="log-time">00:00</span>
-              <div class="log-text">Voting started</div>
-            </div>
-            <div class="log-item">
-              <span class="log-time">00:04</span>
-              <div class="log-text">“They are strong-willed” added to cons</div>
-            </div>
-            <div class="log-item">
-              <span class="log-time">00:04</span>
-              <div class="log-text">“They are strong-willed” added to cons</div>
+            <div *ngFor="let log of logs;" class="log-item">
+              <span class="log-time">{{ log.time }}</span>
+              <div class="log-text">{{ log.text }}</div>
             </div>
           </div>
         </div>
@@ -94,7 +86,11 @@
       <div class="pros">
         <div class="title">
           <div class="title-text">pros <span class="number">cards: {{pros.length}}</span></div>
-          <button mat-icon-button (click)="openAddItemDialog(ItemType.Pros)">
+          <button
+            mat-icon-button
+            (click)="openAddItemDialog(ItemType.Pros)"
+            [disabled]="isVoteFinished"
+          >
             <mat-icon svgIcon="add"></mat-icon>
           </button>
         </div>
@@ -113,7 +109,11 @@
       <div class="cons">
         <div class="title">
           <div class="title-text">cons <span class="number">cards: {{cons.length}}</span></div>
-          <button mat-icon-button (click)="openAddItemDialog(ItemType.Cons)">
+          <button
+            mat-icon-button
+            (click)="openAddItemDialog(ItemType.Cons)"
+            [disabled]="isVoteFinished"
+          >
             <mat-icon svgIcon="add"></mat-icon>
           </button>
         </div>

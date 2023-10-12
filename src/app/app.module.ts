@@ -21,6 +21,8 @@ import { NotificationDialogComponent } from './notification-dialog/notification-
 import { QuizDialogComponent } from './quiz-dialog/quiz-dialog.component';
 import { StartPageComponent } from './start-page/start-page.component';
 import { VoteService } from '../services/vote.service';
+import { LogService } from '../services/log.service';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -47,7 +49,12 @@ import { VoteService } from '../services/vote.service';
     MatInputModule,
     MatDialogModule,
   ],
-  providers: [IconService, VoteService],
+  providers: [
+    DatePipe,
+    IconService,
+    VoteService,
+    LogService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -5,6 +5,7 @@ import { AddItemDialogComponent } from '../add-item-dialog/add-item-dialog.compo
 import { NotificationDialogComponent } from '../notification-dialog/notification-dialog.component';
 import { VoteService } from '../../services/vote.service';
 import { Item } from '../../models/item.model';
+import { LogService } from '../../services/log.service';
 
 @Component({
   selector: 'c-vote-page',
@@ -16,7 +17,8 @@ export class VotePageComponent {
 
   constructor(
     public dialog: MatDialog,
-    private voteService: VoteService
+    private voteService: VoteService,
+    private logService: LogService,
   ) {
   }
 
@@ -26,6 +28,14 @@ export class VotePageComponent {
 
   get cons() {
     return this.voteService.cons;
+  }
+
+  get logs() {
+    return this.logService.logs;
+  }
+
+  get isVoteFinished() {
+    return this.voteService.isVoteFinished;
   }
 
   getTop3(type: ItemType) {
