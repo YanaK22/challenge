@@ -17,7 +17,8 @@ export class VotePageComponent {
   constructor(
     public dialog: MatDialog,
     private voteService: VoteService
-  ) {}
+  ) {
+  }
 
   get pros() {
     return this.voteService.pros;
@@ -27,7 +28,7 @@ export class VotePageComponent {
     return this.voteService.cons;
   }
 
-  top3(type: ItemType) {
+  getTop3(type: ItemType) {
     const items = [...(type === ItemType.Pros ? this.pros : this.cons)];
     const top3Items = [];
 
@@ -38,6 +39,15 @@ export class VotePageComponent {
     }
 
     return top3Items;
+  }
+
+  get diagramData() {
+    const prosLikes = this.pros.reduce((sum, item) => sum + item.likes, 0);
+    const consLikes = this.cons.reduce((sum, item) => sum + item.likes, 0);
+    const prosLikesPct = (prosLikes >= consLikes) ? '100' : (prosLikes * 100 / consLikes).toFixed();
+    const consLikesPct = (consLikes >= prosLikes) ? '100' : (consLikes * 100 / prosLikes).toFixed();
+
+    return { prosLikes, consLikes, prosLikesPct, consLikesPct };
   }
 
   isItemMostLiked(items: Item[], item: Item) {

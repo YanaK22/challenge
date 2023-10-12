@@ -8,7 +8,7 @@ export const MOCK_PROS = [
   {
     id: '617bbc3d',
     text: 'Cats are loyal friends',
-    likes: 4,
+    likes: 14,
     dislikes: 2
   },
   {

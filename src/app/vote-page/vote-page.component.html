@@ -13,15 +13,15 @@
               <div class="list">
                 <div class="list-item">
                   <div class="number first-number">1</div>
-                  <div class="text">{{top3(ItemType.Pros)[0].text}}</div>
+                  <div class="text">{{getTop3(ItemType.Pros)[0].text}}</div>
                 </div>
                 <div class="list-item">
                   <div class="number">2</div>
-                  <div class="text">{{top3(ItemType.Pros)[1].text}}</div>
+                  <div class="text">{{getTop3(ItemType.Pros)[1].text}}</div>
                 </div>
                 <div class="list-item">
                   <div class="number">3</div>
-                  <div class="text">{{top3(ItemType.Pros)[2].text}}</div>
+                  <div class="text">{{getTop3(ItemType.Pros)[2].text}}</div>
                 </div>
               </div>
             </div>
@@ -33,15 +33,15 @@
               <div class="list">
                 <div class="list-item">
                   <div class="number first-number">1</div>
-                  <div class="text">{{top3(ItemType.Cons)[0].text}}</div>
+                  <div class="text">{{getTop3(ItemType.Cons)[0].text}}</div>
                 </div>
                 <div class="list-item">
                   <div class="number">2</div>
-                  <div class="text">{{top3(ItemType.Cons)[1].text}}</div>
+                  <div class="text">{{getTop3(ItemType.Cons)[1].text}}</div>
                 </div>
                 <div class="list-item">
                   <div class="number">3</div>
-                  <div class="text">{{top3(ItemType.Cons)[2].text}}</div>
+                  <div class="text">{{getTop3(ItemType.Cons)[2].text}}</div>
                 </div>
               </div>
             </div>
@@ -51,18 +51,18 @@
             <div class="diagram-title">pros <span>us</span> cons</div>
             <div class="control">
               <div class="control-label">
-                Pros summary likes: 2000
+                Pros summary likes: {{ diagramData.prosLikes }}
               </div>
               <div class="control-line">
-                <div class="control-line-value" [ngStyle]="{'width': 100 + '%' }"></div>
+                <div class="control-line-value" [ngStyle]="{'width': diagramData.prosLikesPct + '%' }"></div>
               </div>
             </div>
             <div class="control">
               <div class="control-label">
-                Cons summary likes: 1560
+                Cons summary likes: {{ diagramData.consLikes }}
               </div>
               <div class="control-line">
-                <div class="control-line-value" [ngStyle]="{'width': 70 + '%' }"></div>
+                <div class="control-line-value" [ngStyle]="{'width': diagramData.consLikesPct + '%' }"></div>
               </div>
             </div>
           </div>
