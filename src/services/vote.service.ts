@@ -16,6 +16,7 @@ export class VoteService implements OnDestroy  {
   //random
   randomCreateProsSec: number[] = [];
   randomCreateConsSec: number[] = [];
+  randomVoteSec: number[] = [];
 
   constructor(private logService: LogService) {
     // init 5 pros & cons using mock
@@ -25,8 +26,10 @@ export class VoteService implements OnDestroy  {
     }
 
     this.generateRandomCreateItemSec();
+    this.generateRandomVoteSec();
     // START EMULATION
     this.emitRandomCreateItemEvents();
+    // this.emitRandomVoteEvents();
 
     this.subscriptions.add(
       this.logService.voteFinished.subscribe(() => {
@@ -48,21 +51,21 @@ export class VoteService implements OnDestroy  {
       .map(text => this.createItem(text, ItemType.Cons));
   }
 
-  like(id: string, type: ItemType) {
+  like(id: string, type: ItemType, count = 1) {
     const items = this[type];
     const index= items.findIndex(item => item.id === id);
     if (index !== -1) {
-      items[index].likes++;
-      this.logService.logLike(items[index].text);
+      items[index].likes += count;
+      this.logService.logLike(items[index].text, count);
     }
   }
 
-  dislike(id: string, type: ItemType) {
+  dislike(id: string, type: ItemType, count = 1) {
     const items = this[type];
     const index= items.findIndex(item => item.id === id);
     if (index !== -1) {
-      items[index].dislikes++;
-      this.logService.logDislike(items[index].text);
+      items[index].dislikes += count;
+      this.logService.logDislike(items[index].text, count);
     }
   }
 
@@ -72,18 +75,16 @@ export class VoteService implements OnDestroy  {
     this.logService.logCreateItem(text, type);
   }
 
-  getRandomFrom1To300() {
+  getRandomNumber(min: number, max: number) {
     // 5min = 300s, generate random second
-    return +(Math.random() * (300 - 1) + 1).toFixed();
+    return +(Math.random() * (max - min) + min).toFixed();
   }
 
   generateRandomCreateItemSec() {
     // 5 items (pros/cons) I render by default, for other 15 I generate creation time (by asc)
     for (let i = 0; i < 15; i++) {
-      this.randomCreateProsSec.push(this.getRandomFrom1To300());
-      this.randomCreateConsSec.push(this.getRandomFrom1To300());
-      this.randomCreateProsSec.sort();
-      this.randomCreateConsSec.sort();
+      this.randomCreateProsSec.push(this.getRandomNumber(1, 300));
+      this.randomCreateConsSec.push(this.getRandomNumber(1, 300));
     }
   }
 
@@ -108,7 +109,42 @@ export class VoteService implements OnDestroy  {
         }
       });
 
-      console.log(timeSec)
+      // console.log(timeSec)
+    }, 1000);
+  }
+
+  generateRandomVoteSec() {
+    // ATTENTION:  Sorry for this simplification, if I had more I time, I would do this better * crying *
+    for (let i = 0; i < 100; i++) {
+      this.randomVoteSec.push(this.getRandomNumber(1, 300));
+    }
+  }
+
+  emitRandomVoteEvents() {
+    // ATTENTION:  Sorry for this simplification, if I had more I time, I would do this better * crying *
+    const interval = setInterval(() => {
+      if (this.isVoteFinished) {
+        clearInterval(interval);
+      }
+
+      const timeSec = +(this.logService.getTime() / 1000).toFixed();
+
+      this.randomVoteSec.forEach(s => {
+        if (s === timeSec) {
+           const type = this.getRandomNumber(1, 10) < 6 ? ItemType.Pros : ItemType.Cons;
+           const itemIndex = this.getRandomNumber(0, this[type].length - 1);
+           const item = this[type][itemIndex];
+           const count = this.getRandomNumber(1, 100);
+           const isLike = this.getRandomNumber(1, 10) < 6;
+           if (isLike) {
+             this.like(item.id, type, count);
+           } else {
+             this.dislike(item.id, type, count);
+           }
+        }
+      });
+
+      // console.log(timeSec)
     }, 1000);
   }
 

@@ -31,11 +31,11 @@ export class LogService {
     this.logs.unshift({ time: this.getTimeFormat(), text: `"${text}" added to ${type}` });
   }
 
-  logLike(text: string) {
-    this.logs.unshift({ time: this.getTimeFormat(), text: `"${text}" liked` });
+  logLike(text: string, count: number) {
+    this.logs.unshift({ time: this.getTimeFormat(), text: `"${text}" liked (${count})` });
   }
 
-  logDislike(text: string) {
-    this.logs.unshift({ time: this.getTimeFormat(), text: `"${text}" disliked` });
+  logDislike(text: string, count: number) {
+    this.logs.unshift({ time: this.getTimeFormat(), text: `"${text}" disliked (${count})` });
   }
 }
