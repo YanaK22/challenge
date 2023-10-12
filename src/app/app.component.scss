@@ -3,7 +3,7 @@
 .header,
 .footer {
   width: 100%;
-  height: 120px;
+  height: 98px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -37,12 +37,12 @@
   column-gap: 16px;
 
   .quiz-button {
-    height: 66px;
     padding: 0 40px;
-    background: $pink-500;
+    background: $yellow-500;
   }
 
   .participants {
+    height: 46px;
     display: flex;
     align-items: center;
     column-gap: 16px;
@@ -50,15 +50,6 @@
     background: $black-600;
     border-radius: $border-radius-6;
     border: $border;
-
-    .avatar {
-      cursor: pointer;
-    }
-
-    .participants-text {
-      font-size: 14px;
-      line-height: 21px;
-    }
   }
 }
 

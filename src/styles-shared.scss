@@ -12,6 +12,7 @@ $pink-500: #EFB6A3;
 $red-500: #DC4040;
 
 $white-56: rgba(255, 255, 255, 0.56);
+$white-40: rgba(255, 255, 255, 0.40);
 $white-32: rgba(255, 255, 255, 0.32);
 $white-24: rgba(255, 255, 255, 0.24);
 $white-16: rgba(255, 255, 255, 0.16);
@@ -64,7 +65,7 @@ $border-hover: 1.5px solid $yellow-32;
 .mat-mdc-raised-button.mat-mdc-button-base,
 .mat-mdc-unelevated-button.mat-mdc-button-base,
 .mat-mdc-outlined-button.mat-mdc-button-base {
-  min-height: 48px !important;
+  min-height: 46px !important;
 }
 
 .mat-mdc-outlined-button:disabled {
