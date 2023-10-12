@@ -109,7 +109,7 @@ export class VoteService implements OnDestroy  {
         }
       });
 
-      // console.log(timeSec)
+      console.log(timeSec);
     }, 1000);
   }
 
@@ -144,7 +144,6 @@ export class VoteService implements OnDestroy  {
         }
       });
 
-      // console.log(timeSec)
     }, 1000);
   }
 
