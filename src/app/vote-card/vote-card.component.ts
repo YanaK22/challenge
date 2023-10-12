@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Item } from '../../models/item.model';
 
 @Component({
   selector: 'c-vote-card',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./vote-card.component.scss']
 })
 export class VoteCardComponent {
+  @Input() item!: Item;
+  @Input() isNew? = false;
+  @Input() isMostLiked? = false;
+  @Input() isMostDisliked? = false;
 
+  constructor() {}
 }

@@ -12,7 +12,7 @@
 
 .info {
   display: flex;
-  column-gap: 32px;
+  column-gap: 48px;
   margin-bottom: 96px;
 }
 
@@ -29,36 +29,16 @@
   }
 
   .results-card {
-    width: 906px;
     background: $black-600;
     border: $border;
     border-radius: $border-radius-12;
     padding: 40px;
   }
 
-  .lead-top {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 64px;
-  }
-
-  .lead {
-    width: 200px;
-    height: 200px;
-    border: 1.5px solid $yellow-56;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: $h-font-family;
-    font-size: 24px;
-    line-height: 32px;
-    color: $yellow-500;
-  }
-
   .top {
     display: flex;
     column-gap: 64px;
+    margin-bottom: 64px;
 
     .top-pros,
     .top-cons {
@@ -97,12 +77,6 @@
     .first-number {
       color: $yellow-500;
     }
-  }
-
-  .diagram-total {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
   }
 
   .diagram-title {
@@ -202,9 +176,8 @@
 .pros-cons {
   width: 906px;
   display: flex;
-  column-gap: 56px;
+  column-gap: 48px;
   justify-content: space-between;
-  margin: 0 auto;
 
   .pros,
   .cons {

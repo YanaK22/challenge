@@ -4,74 +4,66 @@
       <div class="results">
         <h2 class="results-title">current results</h2>
         <div class="results-card">
-          <div class="lead-top">
-            <div class="lead">pros lead!</div>
-            <div class="top">
-              <div class="top-pros">
-                <div class="top-title">
-                  <img src="assets/icons/pros3.svg">
-                  <div>top 3 of pros</div>
+          <div class="top">
+            <div class="top-pros">
+              <div class="top-title">
+                <img src="assets/icons/pros3.svg">
+                <div>top 3 of pros</div>
+              </div>
+              <div class="list">
+                <div class="list-item">
+                  <div class="number first-number">1</div>
+                  <div class="text">They can be low-maintenance</div>
                 </div>
-                <div class="list">
-                  <div class="list-item">
-                    <div class="number first-number">1</div>
-                    <div class="text">They can be low-maintenance</div>
-                  </div>
-                  <div class="list-item">
-                    <div class="number">2</div>
-                    <div class="text">They can be low-maintenance</div>
-                  </div>
-                  <div class="list-item">
-                    <div class="number">3</div>
-                    <div class="text">They can be low-maintenance</div>
-                  </div>
+                <div class="list-item">
+                  <div class="number">2</div>
+                  <div class="text">They can be low-maintenance</div>
+                </div>
+                <div class="list-item">
+                  <div class="number">3</div>
+                  <div class="text">They can be low-maintenance</div>
                 </div>
               </div>
-              <div class="top-cons">
-                <div class="top-title">
-                  <img src="assets/icons/cons3.svg">
-                  <div>top 3 of cons</div>
+            </div>
+            <div class="top-cons">
+              <div class="top-title">
+                <img src="assets/icons/cons3.svg">
+                <div>top 3 of cons</div>
+              </div>
+              <div class="list">
+                <div class="list-item">
+                  <div class="number first-number">1</div>
+                  <div class="text">They can be low-maintenance</div>
                 </div>
-                <div class="list">
-                  <div class="list-item">
-                    <div class="number first-number">1</div>
-                    <div class="text">They can be low-maintenance</div>
-                  </div>
-                  <div class="list-item">
-                    <div class="number">2</div>
-                    <div class="text">They can be low-maintenance</div>
-                  </div>
-                  <div class="list-item">
-                    <div class="number">3</div>
-                    <div class="text">They can be low-maintenance</div>
-                  </div>
+                <div class="list-item">
+                  <div class="number">2</div>
+                  <div class="text">They can be low-maintenance</div>
+                </div>
+                <div class="list-item">
+                  <div class="number">3</div>
+                  <div class="text">They can be low-maintenance</div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="diagram-total">
-            <div class="diagram">
-              <div class="diagram-title">pros <span>us</span> cons</div>
-              <div class="control">
-                <div class="control-label">
-                  Pros summary likes: 2000
-                </div>
-                <div class="control-line">
-                  <div class="control-line-value" [ngStyle]="{'width': 100 + '%' }"></div>
-                </div>
+
+          <div class="diagram">
+            <div class="diagram-title">pros <span>us</span> cons</div>
+            <div class="control">
+              <div class="control-label">
+                Pros summary likes: 2000
               </div>
-              <div class="control">
-                <div class="control-label">
-                  Cons summary likes: 1560
-                </div>
-                <div class="control-line">
-                  <div class="control-line-value" [ngStyle]="{'width': 70 + '%' }"></div>
-                </div>
+              <div class="control-line">
+                <div class="control-line-value" [ngStyle]="{'width': 100 + '%' }"></div>
               </div>
             </div>
-            <div class="total">
-              <div class="total-pros">Total pros: 24</div>
-              <div class="total-cons">Total cons: 24</div>
+            <div class="control">
+              <div class="control-label">
+                Cons summary likes: 1560
+              </div>
+              <div class="control-line">
+                <div class="control-line-value" [ngStyle]="{'width': 70 + '%' }"></div>
+              </div>
             </div>
           </div>
         </div>
@@ -107,8 +99,13 @@
           </button>
         </div>
         <div class="cards">
-          <c-vote-card></c-vote-card>
-          <c-vote-card></c-vote-card>
+          <c-vote-card
+            *ngFor="let prosItem of pros; let i = index"
+            [item]="prosItem"
+            [isNew]="i === 0"
+            [isMostLiked]="isItemMostLiked(pros, prosItem)"
+            [isMostDisliked]="isItemMostDisliked(pros, prosItem)"
+          ></c-vote-card>
         </div>
       </div>
 
@@ -120,10 +117,13 @@
           </button>
         </div>
         <div class="cards">
-          <c-vote-card></c-vote-card>
-          <c-vote-card></c-vote-card>
-          <c-vote-card></c-vote-card>
-          <c-vote-card></c-vote-card>
+          <c-vote-card
+            *ngFor="let consItem of cons; let i = index"
+            [item]="consItem"
+            [isNew]="i === 0"
+            [isMostLiked]="isItemMostLiked(cons, consItem)"
+            [isMostDisliked]="isItemMostDisliked(cons, consItem)"
+          ></c-vote-card>
         </div>
       </div>
     </div>

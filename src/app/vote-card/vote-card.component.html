@@ -1,12 +1,14 @@
 <div class="vote-card">
-  <div class="label">
-    most liked
+  <div class="labels">
+    <div *ngIf="isNew" class="label">new</div>
+    <div *ngIf="isMostLiked" class="label">most liked</div>
+    <div *ngIf="isMostDisliked" class="label">most disliked</div>
   </div>
-  <div class="option">They can be low-maintenance</div>
+  <div class="option">{{item.text}}</div>
   <div class="info-actions">
     <div class="info">
-      <div class="info-likes">Likes: 65</div>
-      <div class="info-likes">Dislikes: 24</div>
+      <div class="info-likes">Likes: {{item.likes}}</div>
+      <div class="info-likes">Dislikes: {{item.dislikes}}</div>
     </div>
     <div class="actions">
       <button mat-icon-button>

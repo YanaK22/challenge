@@ -20,6 +20,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { NotificationDialogComponent } from './notification-dialog/notification-dialog.component';
 import { QuizDialogComponent } from './quiz-dialog/quiz-dialog.component';
 import { StartPageComponent } from './start-page/start-page.component';
+import { VoteService } from '../services/vote.service';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,7 @@ import { StartPageComponent } from './start-page/start-page.component';
     MatInputModule,
     MatDialogModule,
   ],
-  providers: [IconService],
+  providers: [IconService, VoteService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
