@@ -1,7 +1,7 @@
 @import "../../styles-shared";
 
 .start-page {
-  min-height: calc(100% - 98px * 2);
+  min-height: calc(100vh - 98px * 2);
   padding: 48px 24px;
   position: relative;
   display: flex;
