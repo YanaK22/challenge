@@ -11,10 +11,10 @@
       <div class="info-likes">Dislikes: {{item.dislikes}}</div>
     </div>
     <div class="actions">
-      <button mat-icon-button>
+      <button mat-icon-button (click)="onLikeClick(item.id)">
         <mat-icon svgIcon="like"></mat-icon>
       </button>
-      <button mat-icon-button>
+      <button mat-icon-button (click)="onDislikeClick(item.id)">
         <mat-icon svgIcon="dislike"></mat-icon>
       </button>
     </div>

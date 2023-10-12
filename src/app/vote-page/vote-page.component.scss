@@ -17,6 +17,7 @@
 }
 
 .results {
+  max-width: 720px;
   display: flex;
   flex-direction: column;
   row-gap: 24px;
@@ -37,12 +38,12 @@
 
   .top {
     display: flex;
-    column-gap: 64px;
+    column-gap: 40px;
     margin-bottom: 64px;
 
     .top-pros,
     .top-cons {
-      max-width: 240px;
+      flex: 1;
     }
 
     .top-title {
@@ -199,13 +200,12 @@
     align-items: center;
     justify-content: space-between;
     margin-bottom: 24px;
+
+    .number {
+      font-family: $font-family;
+      font-size: 16px;
+      line-height: 18px;
+      color: $white-40;
+    }
   }
 }
-
-.bg-image {
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  z-index: -1;
-}
-

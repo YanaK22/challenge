@@ -13,15 +13,15 @@
               <div class="list">
                 <div class="list-item">
                   <div class="number first-number">1</div>
-                  <div class="text">They can be low-maintenance</div>
+                  <div class="text">{{top3(ItemType.Pros)[0].text}}</div>
                 </div>
                 <div class="list-item">
                   <div class="number">2</div>
-                  <div class="text">They can be low-maintenance</div>
+                  <div class="text">{{top3(ItemType.Pros)[1].text}}</div>
                 </div>
                 <div class="list-item">
                   <div class="number">3</div>
-                  <div class="text">They can be low-maintenance</div>
+                  <div class="text">{{top3(ItemType.Pros)[2].text}}</div>
                 </div>
               </div>
             </div>
@@ -33,15 +33,15 @@
               <div class="list">
                 <div class="list-item">
                   <div class="number first-number">1</div>
-                  <div class="text">They can be low-maintenance</div>
+                  <div class="text">{{top3(ItemType.Cons)[0].text}}</div>
                 </div>
                 <div class="list-item">
                   <div class="number">2</div>
-                  <div class="text">They can be low-maintenance</div>
+                  <div class="text">{{top3(ItemType.Cons)[1].text}}</div>
                 </div>
                 <div class="list-item">
                   <div class="number">3</div>
-                  <div class="text">They can be low-maintenance</div>
+                  <div class="text">{{top3(ItemType.Cons)[2].text}}</div>
                 </div>
               </div>
             </div>
@@ -93,7 +93,7 @@
     <div class="pros-cons">
       <div class="pros">
         <div class="title">
-          <div class="title-text">pros</div>
+          <div class="title-text">pros <span class="number">cards: {{pros.length}}</span></div>
           <button mat-icon-button (click)="openAddItemDialog(ItemType.Pros)">
             <mat-icon svgIcon="add"></mat-icon>
           </button>
@@ -102,6 +102,7 @@
           <c-vote-card
             *ngFor="let prosItem of pros; let i = index"
             [item]="prosItem"
+            [type]="ItemType.Pros"
             [isNew]="i === 0"
             [isMostLiked]="isItemMostLiked(pros, prosItem)"
             [isMostDisliked]="isItemMostDisliked(pros, prosItem)"
@@ -111,7 +112,7 @@
 
       <div class="cons">
         <div class="title">
-          <div class="title-text">cons</div>
+          <div class="title-text">cons <span class="number">cards: {{cons.length}}</span></div>
           <button mat-icon-button (click)="openAddItemDialog(ItemType.Cons)">
             <mat-icon svgIcon="add"></mat-icon>
           </button>
@@ -120,6 +121,7 @@
           <c-vote-card
             *ngFor="let consItem of cons; let i = index"
             [item]="consItem"
+            [type]="ItemType.Cons"
             [isNew]="i === 0"
             [isMostLiked]="isItemMostLiked(cons, consItem)"
             [isMostDisliked]="isItemMostDisliked(cons, consItem)"

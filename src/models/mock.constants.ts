@@ -33,7 +33,7 @@ export const MOCK_PROS = [
     id: 'e12d7dc2',
     text: 'They are entertaining',
     likes: 0,
-    dislikes: 0
+    dislikes: 1
   },
   {
     id: 'f87ebb9e',
@@ -57,7 +57,7 @@ export const MOCK_PROS = [
     id: 'b6a3cd9a',
     text: 'Cats can keep themselves busy',
     likes: 0,
-    dislikes: 0
+    dislikes: 5
   },
   {
     id: '76e091f3',
@@ -86,98 +86,98 @@ export const MOCK_PROS = [
   {
     id: '5ab9b6a9',
     text: 'You don\'t have to walk them',
-    likes: 0,
+    likes: 10,
     dislikes: 0
   },
 ]
 
 export const MOCK_CONS = [
   {
-    id: '02af4ee5',
+    id: 'ecf89f10',
     text: 'Their litter boxes are smelly and must be cleaned regularly',
-    likes: 0,
-    dislikes: 0
-},
+    likes: 11,
+    dislikes: 12
+  },
   {
-    id: '02af4ee5',
+    id: '2ee7c831',
     text: 'They damage furniture',
     likes: 0,
     dislikes: 0
   },
   {
-    id: '02af4ee5',
+    id: '88000269',
     text: 'Many people are allergic to them',
-    likes: 0,
-    dislikes: 0
+    likes: 3,
+    dislikes: 6
   },
   {
-    id: '02af4ee5',
+    id: 'af79f10b',
     text: 'Veterinary care is expensive',
-    likes: 0,
-    dislikes: 0
+    likes: 8,
+    dislikes: 20
   },
   {
-    id: '02af4ee5',
+    id: '8bc140c2',
     text: 'They may kill small animals',
     likes: 0,
     dislikes: 0
   },
   {
-    id: '02af4ee5',
+    id: 'd60a52cb',
     text: 'They are strong-willed',
     likes: 0,
     dislikes: 0
   },
   {
-    id: '02af4ee5',
+    id: 'f827d2ca',
     text: 'They vomit occasionally',
     likes: 0,
     dislikes: 0
   },
   {
-    id: '02af4ee5',
+    id: '64d07cd3',
     text: 'Difficulties if you want to rent a flat',
     likes: 0,
     dislikes: 0
   },
   {
-    id: '02af4ee5',
+    id: 'b42bc10c',
     text: 'They may wake you up',
     likes: 0,
     dislikes: 0
   },
   {
-    id: '02af4ee5',
+    id: '2606c95c',
     text: 'They can be very vocal',
     likes: 0,
     dislikes: 0
   },
   {
-    id: '02af4ee5',
+    id: '5005b31c',
     text: 'They can get fleas',
     likes: 0,
     dislikes: 0
   },
   {
-    id: '02af4ee5',
+    id: 'c0e72b20',
     text: 'Cat hair in your home',
     likes: 0,
     dislikes: 0
   },
   {
-    id: '02af4ee5',
+    id: 'ac0eb039',
     text: 'I can’t travel as freely as I did before',
     likes: 0,
     dislikes: 0
   },
   {
-    id: '02af4ee5',
+    id: 'b8e43ba3',
     text: 'They may scratch or bite',
     likes: 0,
     dislikes: 0
   },
   {
-    id: '02af4ee5',
+    id: '384bd698',
     text: 'Your cat may get lost',
     likes: 0,
     dislikes: 0
