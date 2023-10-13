@@ -11,7 +11,7 @@ import { LogService } from '../services/log.service';
 })
 export class AppComponent implements OnInit {
   constructor(
-    private logService: LogService,
+    // private logService: LogService,
     private iconService: IconService,
     public dialog: MatDialog
   ) {
@@ -20,9 +20,9 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {}
 
-  get timeFormat() {
-    return this.logService.getValidatedTimeFormat();
-  }
+  // get timeFormat() {
+  //   return this.logService.getValidatedTimeFormat();
+  // }
 
   openQuizDialog() {
     this.dialog.open(QuizDialogComponent);
