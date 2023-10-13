@@ -50,6 +50,10 @@
     background: $black-600;
     border-radius: $border-radius-6;
     border: $border;
+
+    .divider {
+      color: $white-16
+    }
   }
 }
 

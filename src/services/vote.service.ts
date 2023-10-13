@@ -37,7 +37,7 @@ export class VoteService implements OnDestroy  {
     this.subscriptions.add(
       this.logService.voteFinished.subscribe(() => {
         this.isVoteFinished = true;
-        console.log('Vote finished!');
+
       })
     );
   }

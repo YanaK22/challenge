@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { IconService } from '../services/icon.service';
 import { MatDialog } from '@angular/material/dialog';
 import { QuizDialogComponent } from './quiz-dialog/quiz-dialog.component';
+import { LogService } from '../services/log.service';
 
 @Component({
   selector: 'app-root',
@@ -10,6 +11,7 @@ import { QuizDialogComponent } from './quiz-dialog/quiz-dialog.component';
 })
 export class AppComponent implements OnInit {
   constructor(
+    private logService: LogService,
     private iconService: IconService,
     public dialog: MatDialog
   ) {
@@ -17,6 +19,10 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {}
+
+  get timeFormat() {
+    return this.logService.getTimeFormat();
+  }
 
   openQuizDialog() {
     this.dialog.open(QuizDialogComponent);

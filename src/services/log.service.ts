@@ -9,9 +9,16 @@ export class LogService {
   startDate!: number;
   voteFinished = new EventEmitter<void>();
 
+  duration = 300000; // 5 min
+
   constructor(private datePipe: DatePipe) {
     this.startDate = Date.now();
-    setTimeout(() => this.voteFinished.emit(), 300000);
+
+    setTimeout(() => {
+      this.logFinishVoting();
+      this.voteFinished.emit()
+    }, this.duration);
+
     this.logStartVoting();
   }
 
@@ -25,6 +32,10 @@ export class LogService {
 
   logStartVoting() {
     this.logs.unshift({ time: '00:00', text: 'Voting started' });
+  }
+
+  logFinishVoting() {
+    this.logs.unshift({ time: this.getTimeFormat(), text: 'Voting ended' });
   }
 
   logCreateItem(text: string, type: ItemType) {
