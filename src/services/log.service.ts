@@ -16,7 +16,7 @@ export class LogService {
 
     setTimeout(() => {
       this.logFinishVoting();
-      this.voteFinished.emit()
+      this.voteFinished.emit();
     }, this.duration);
 
     this.logStartVoting();
@@ -30,12 +30,18 @@ export class LogService {
     return this.datePipe.transform(this.getTime(), 'mm:ss') ?? '';
   }
 
+  getValidatedTimeFormat() {
+    const max = this.duration * 1000; //ms
+    const current = this.getTime();
+    return this.datePipe.transform(current < max? current : max, 'mm:ss') ?? '';
+  }
+
   logStartVoting() {
     this.logs.unshift({ time: '00:00', text: 'Voting started' });
   }
 
   logFinishVoting() {
-    this.logs.unshift({ time: this.getTimeFormat(), text: 'Voting ended' });
+    setTimeout(() => this.logs.unshift({ time: '05:00', text: 'Voting ended' }), 100);
   }
 
   logCreateItem(text: string, type: ItemType) {

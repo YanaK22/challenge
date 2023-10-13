@@ -21,7 +21,7 @@ export class AppComponent implements OnInit {
   ngOnInit() {}
 
   get timeFormat() {
-    return this.logService.getTimeFormat();
+    return this.logService.getValidatedTimeFormat();
   }
 
   openQuizDialog() {
