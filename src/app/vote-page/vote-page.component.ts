@@ -52,8 +52,8 @@ export class VotePageComponent {
   }
 
   get diagramData() {
-    const prosLikes = this.pros.reduce((sum, item) => sum + item.likes, 0);
-    const consLikes = this.cons.reduce((sum, item) => sum + item.likes, 0);
+    const prosLikes = this.voteService.prosLikes;
+    const consLikes = this.voteService.consLikes;
     const prosLikesPct = (prosLikes >= consLikes) ? '100' : (prosLikes * 100 / consLikes).toFixed();
     const consLikesPct = (consLikes >= prosLikes) ? '100' : (consLikes * 100 / prosLikes).toFixed();
 

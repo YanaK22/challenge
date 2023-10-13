@@ -5,6 +5,8 @@ import { ItemType } from '../models/item-type.enum';
 import { v4 as uuid } from 'uuid';
 import { LogService } from './log.service';
 import { Subscription } from 'rxjs';
+import { MatDialog } from '@angular/material/dialog';
+import { ResultsDialogComponent } from '../app/results-dialog/results-dialog.component';
 
 @Injectable({ providedIn: 'root' })
 export class VoteService implements OnDestroy  {
@@ -19,7 +21,10 @@ export class VoteService implements OnDestroy  {
 
   isVoteProsAdv;
 
-  constructor(private logService: LogService) {
+  constructor(
+    private logService: LogService,
+    public dialog: MatDialog,
+  ) {
     // init 5 pros & cons using mock
     for (let i = 0; i < 5; i++) {
       this.createMockProsItem();
@@ -31,15 +36,24 @@ export class VoteService implements OnDestroy  {
     console.log(`Pros has adv: ${this.isVoteProsAdv}`);
 
     // START EMULATION
-    // this.emitRandomCreateItemEvents();
-    // this.emitRandomVoteEvents();
+    this.emitRandomCreateItemEvents();
+    this.emitRandomVoteEvents();
 
     this.subscriptions.add(
       this.logService.voteFinished.subscribe(() => {
         this.isVoteFinished = true;
-
+        const winner = this.prosLikes > this.consLikes ? ItemType.Pros : ItemType.Cons;
+        this.dialog.open(ResultsDialogComponent, { data: { winner } });
       })
     );
+  }
+
+  get prosLikes() {
+    return this.pros.reduce((sum, item) => sum + item.likes, 0);
+  }
+
+  get consLikes() {
+    return this.cons.reduce((sum, item) => sum + item.likes, 0);
   }
 
   createMockProsItem() {

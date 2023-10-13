@@ -23,6 +23,7 @@ import { StartPageComponent } from './start-page/start-page.component';
 import { VoteService } from '../services/vote.service';
 import { LogService } from '../services/log.service';
 import { DatePipe } from '@angular/common';
+import { ResultsDialogComponent } from './results-dialog/results-dialog.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { DatePipe } from '@angular/common';
     AddItemDialogComponent,
     NotificationDialogComponent,
     QuizDialogComponent,
+    ResultsDialogComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,15 @@
+<div mat-dialog-content>
+  <div class="content">
+    <img *ngIf="data.winner === ItemType.Pros" class="image" src="assets/images/pros-wins.png">
+    <img *ngIf="data.winner === ItemType.Cons" class="image" src="assets/images/cons-wins.png">
+
+    <div class="title">
+      {{ data.winner }} wins!
+    </div>
+    <div class="subtitle">
+      ({{ data.winner === ItemType.Pros ? 'fantastic ladies and gentlemen' : 'oh no, why?'}})
+    </div>
+
+    <button class="close-button" mat-stroked-button mat-dialog-close>Close</button>
+  </div>
+</div>
