@@ -14,14 +14,14 @@
       <button
         mat-icon-button
         (click)="onLikeClick(item.id)"
-        [disabled]="isVoteFinished"
+        [disabled]="isActionsDisabled(item)"
       >
         <mat-icon svgIcon="like"></mat-icon>
       </button>
       <button
         mat-icon-button
         (click)="onDislikeClick(item.id)"
-        [disabled]="isVoteFinished"
+        [disabled]="isActionsDisabled(item)"
       >
         <mat-icon svgIcon="dislike"></mat-icon>
       </button>

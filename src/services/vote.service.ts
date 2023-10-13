@@ -31,8 +31,8 @@ export class VoteService implements OnDestroy  {
     console.log(`Pros has adv: ${this.isVoteProsAdv}`);
 
     // START EMULATION
-    this.emitRandomCreateItemEvents();
-    this.emitRandomVoteEvents();
+    // this.emitRandomCreateItemEvents();
+    // this.emitRandomVoteEvents();
 
     this.subscriptions.add(
       this.logService.voteFinished.subscribe(() => {
@@ -54,27 +54,42 @@ export class VoteService implements OnDestroy  {
       .map(text => this.createItem(text, ItemType.Cons));
   }
 
-  like(id: string, type: ItemType, count = 1) {
+  like(id: string, type: ItemType, count = 1, isUser = false) {
     const items = this[type];
     const index= items.findIndex(item => item.id === id);
     if (index !== -1) {
       items[index].likes += count;
       this.logService.logLike(items[index].text, count);
+
+      if (isUser) {
+        items[index].isUserLiked = true;
+      }
     }
   }
 
-  dislike(id: string, type: ItemType, count = 1) {
+  dislike(id: string, type: ItemType, count = 1, isUser = false) {
     const items = this[type];
     const index= items.findIndex(item => item.id === id);
     if (index !== -1) {
       items[index].dislikes += count;
       this.logService.logDislike(items[index].text, count);
+
+      if (isUser) {
+        items[index].isUserDisliked = true;
+      }
     }
   }
 
   createItem(text: string, type: ItemType) {
     const id = uuid();
-    this[type].unshift({ id, text, likes: 0, dislikes: 0 });
+    this[type].unshift({
+      id,
+      text,
+      likes: 0,
+      dislikes: 0,
+      isUserLiked: false,
+      isUserDisliked: false,
+    });
     this.logService.logCreateItem(text, type);
   }
 
@@ -110,8 +125,6 @@ export class VoteService implements OnDestroy  {
           this.createMockConsItem();
         }
       });
-
-      // console.log(timeSec);
     }, 1000);
   }
 

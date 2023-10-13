@@ -21,11 +21,15 @@ export class VoteCardComponent {
     return this.voteService.isVoteFinished;
   }
 
+  isActionsDisabled(item: Item) {
+    return item.isUserLiked || item.isUserDisliked || this.isVoteFinished;
+  }
+
   onLikeClick(id: string) {
-    this.voteService.like(id, this.type);
+    this.voteService.like(id, this.type, 1, true);
   }
 
   onDislikeClick(id: string) {
-    this.voteService.dislike(id, this.type);
+    this.voteService.dislike(id, this.type, 1, true);
   }
 }

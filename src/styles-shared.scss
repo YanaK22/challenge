@@ -43,6 +43,16 @@ $border-hover: 1.5px solid $yellow-32;
   border: $border-hover;
 }
 
+.mat-mdc-button-base:disabled {
+  ::ng-deep svg .fill {
+    fill: $white-24;
+  }
+
+  ::ng-deep svg .stroke {
+    stroke: $white-24;
+  }
+}
+
 .mat-mdc-icon-button .mat-mdc-button-touch-target {
   width: 40px !important;
   height: 40px !important;
